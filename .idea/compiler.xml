@@ -8,13 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DonationMS" />
+        <module name="PaiementMS" />
+        <module name="GateWay" />
+        <module name="configServer" />
         <module name="userMS" />
         <module name="DiscoveryService" />
-        <module name="PaiementMS" />
         <module name="OrganisationMS" />
-        <module name="GateWay" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="config-server" target="1.5" />
+      <module name="config-Server" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -23,6 +28,7 @@
       <module name="GateWay" options="-parameters" />
       <module name="OrganisationMS" options="-parameters" />
       <module name="PaiementMS" options="-parameters" />
+      <module name="configServer" options="-parameters" />
       <module name="userMS" options="-parameters" />
     </option>
   </component>
