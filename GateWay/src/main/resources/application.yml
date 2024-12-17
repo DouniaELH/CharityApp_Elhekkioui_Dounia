@@ -12,6 +12,7 @@
 #          predicates:
 #            - Path= /organistions/**
 
+
 spring:
   cloud:
     gateway:

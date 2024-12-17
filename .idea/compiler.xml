@@ -17,8 +17,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="commun-ms" target="17" />
       <module name="config-server" target="1.5" />
       <module name="config-Server" target="1.5" />
+      <module name="Notification" target="17" />
+      <module name="untitled" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,8 +29,10 @@
       <module name="DiscoveryService" options="-parameters" />
       <module name="DonationMS" options="-parameters" />
       <module name="GateWay" options="-parameters" />
+      <module name="Notification" options="-parameters" />
       <module name="OrganisationMS" options="-parameters" />
       <module name="PaiementMS" options="-parameters" />
+      <module name="commun-ms" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="userMS" options="-parameters" />
     </option>

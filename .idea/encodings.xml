@@ -4,9 +4,12 @@
     <file url="file://$PROJECT_DIR$/DiscoveryService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DonationMS/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GateWay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Notification/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OrganisationMS/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/PaiementMS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commun-ms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/untitled/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/userMS/src/main/java" charset="UTF-8" />
   </component>
 </project>

@@ -2,6 +2,7 @@ package ma.emsi.donationms.Controller;
 
 import ma.emsi.donationms.Entity.Donation;
 import ma.emsi.donationms.Service.DonationService;
+import ma.emsi.donationms.Service.KafkaSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,10 @@ import java.util.List;
 public class DonationController {
     @Autowired
     private DonationService donationService;
+
+    @Autowired
+    private KafkaSender kafkaSenderService;
+
 
     @GetMapping("/listDonations")
     public List<Donation> getAllDonations() {
@@ -31,5 +36,13 @@ public class DonationController {
     public void deleteDonation(@RequestParam("id") Long id) {
         donationService.deleteDonation(id);
     }
+
+    @PostMapping("/{donationId}/notify")
+    public String notifyDonation(@PathVariable Long donationId, @RequestBody String message) {
+        kafkaSenderService.sendMessage(message, "donation-topic");
+        return "Message sent to Kafka topic for donation ID: " + donationId;
+    }
+
+
 
 }

@@ -1,5 +1,7 @@
 package ma.emsi.donationms.Service;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import ma.emsi.donationms.Entity.Donation;
 import ma.emsi.donationms.Repo.DonationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
