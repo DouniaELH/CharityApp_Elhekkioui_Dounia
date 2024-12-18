@@ -14,8 +14,9 @@
 
 
 spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
+  application:
+    name: GateWay
+  config:
+    import: optional:configserver:http://localhost:8090
+server:
+  port: 8083

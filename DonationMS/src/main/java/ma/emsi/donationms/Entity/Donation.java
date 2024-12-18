@@ -21,5 +21,4 @@ public class Donation {
     private Long id;
     private Double amount;
     private String donorName;
-
 }
