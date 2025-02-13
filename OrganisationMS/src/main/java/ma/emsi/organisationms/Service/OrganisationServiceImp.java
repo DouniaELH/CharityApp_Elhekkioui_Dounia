@@ -5,11 +5,11 @@ import ma.emsi.organisationms.Repos.OrganisationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
-@EnableFeignClients("ma.emsi.communms.Feign")
+@Service
 public class OrganisationServiceImp implements OrganisationService{
 
     @Autowired
@@ -34,4 +34,8 @@ public class OrganisationServiceImp implements OrganisationService{
         organisationRepo.deleteById(id);
     }
 
+    @Override
+    public Organisation findOrganisationById(Long id) {
+        return organisationRepo.findById(id).get();
+    }
 }

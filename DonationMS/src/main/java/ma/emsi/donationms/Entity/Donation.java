@@ -21,4 +21,10 @@ public class Donation {
     private Long id;
     private Double amount;
     private String donorName;
+    private Long userId;
+    private Long organisationId;
+    @Transient
+    private OrganisationModel org;
+    @Transient
+    private UserModel usr;
 }

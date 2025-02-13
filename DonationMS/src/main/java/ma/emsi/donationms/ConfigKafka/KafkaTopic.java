@@ -11,7 +11,7 @@ public class KafkaTopic {
 
     @Bean
     public NewTopic donationTopic() {
-        return TopicBuilder.name("donation-topic")
+        return TopicBuilder.name("topic-donation")
                 .partitions(3)
                 .replicas(1)
                 .build();

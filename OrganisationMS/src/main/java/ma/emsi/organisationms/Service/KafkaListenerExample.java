@@ -7,8 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class KafkaListenerExample {
 
-    @KafkaListener(topics = "donation-topic", groupId = "organisation-consumer-group")
+    @KafkaListener(topics = "topic-donation", groupId = "organisation-consumer-group")
     public void listener(String donationMessage) {
         log.info("Received message: {}", donationMessage);
+        if (donationMessage == null || donationMessage.isEmpty()) {
+            log.warn("Received an empty or null message!");
+        }
     }
 }

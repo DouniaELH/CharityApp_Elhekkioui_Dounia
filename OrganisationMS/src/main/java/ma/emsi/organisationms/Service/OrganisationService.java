@@ -12,5 +12,6 @@ public interface OrganisationService {
     public Organisation createOrganisation(Organisation organisation);
     public Organisation updateOrganisation(Organisation organisation);
     public void deleteOrganisation(Long id);
+    public Organisation findOrganisationById(Long id);
 
 }

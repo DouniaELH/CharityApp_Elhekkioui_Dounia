@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/users")
+@RequestMapping("/users")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -23,6 +23,12 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @GetMapping("/getUserById/{id}")
+    public User getUserById(@PathVariable Long id){
+        return userService.findUserById(id);
+    }
+
 
     @DeleteMapping("/deleteUser")
     public void deleteUser(@RequestParam("id") Long id) {

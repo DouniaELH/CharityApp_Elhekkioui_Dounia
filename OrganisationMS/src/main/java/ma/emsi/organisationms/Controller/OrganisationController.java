@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@RequestMapping("/organisations")
+@RequestMapping("/organisations")
 public class OrganisationController {
     @Autowired
     private OrganisationService organisationService;
@@ -22,6 +22,10 @@ public class OrganisationController {
     @PostMapping("/createOrganisation")
     public Organisation createOrganisation(@RequestBody Organisation organisation) {
         return organisationService.createOrganisation(organisation);
+    }
+    @GetMapping("/getOrganisationById/{id}")
+    public Organisation getOrganisation(@PathVariable Long id){
+        return organisationService.findOrganisationById(id);
     }
 
     @PutMapping("/updateOrganisation")

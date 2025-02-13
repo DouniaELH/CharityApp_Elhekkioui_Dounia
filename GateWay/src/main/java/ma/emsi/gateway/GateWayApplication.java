@@ -17,11 +17,11 @@ public class GateWayApplication {
     }
 
     //@Bean
-    DiscoveryClientRouteDefinitionLocator dynamicRoutes(ReactiveDiscoveryClient rdc, DiscoveryLocatorProperties dlp) {
+    /*DiscoveryClientRouteDefinitionLocator dynamicRoutes(ReactiveDiscoveryClient rdc, DiscoveryLocatorProperties dlp) {
         return new DiscoveryClientRouteDefinitionLocator(rdc, dlp);
     }
     //@Bean
-    /*public RouteLocator myRoutes(RouteLocatorBuilder builder) {
+   public RouteLocator myRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(p -> p.path("/users/**").uri("lb/USERMS"))
                 .route(p -> p.path("/organisations/**").uri("lb/ORGANISATIONMS"))

@@ -8,15 +8,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class DonationServiceImp implements DonationService {
     @Autowired
     private DonationRepo donationRepo;
+    @Autowired
+    private UserModelRestClient userModelRestClient;
+    @Autowired
+    private OrganisationModelRestClient organisationModelRestClient;
 
     @Override
     public List<Donation> getAllDonations() {
-        return donationRepo.findAll();
+        return donationRepo.findAll().stream()
+                .map(donation -> {
+                    if (donation.getUserId() != null) {
+                        donation.setUsr(userModelRestClient.getUserById(donation.getUserId()));
+                    }
+                    if (donation.getOrganisationId() != null) {
+                        donation.setOrg(organisationModelRestClient.getOrganisationById(donation.getOrganisationId()));
+                    }
+                    return donation;
+                })
+                .collect(Collectors.toList());
     }
 
     @Override

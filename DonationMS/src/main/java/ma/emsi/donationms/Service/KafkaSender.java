@@ -13,6 +13,6 @@ public class KafkaSender {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message, String s) {
-        kafkaTemplate.send("donation-topic", message);
+        kafkaTemplate.send("topic-donation", message);
     }
 }
